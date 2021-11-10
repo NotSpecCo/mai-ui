@@ -30,7 +30,7 @@ export enum IconColor {
   Dark = '#000000',
 }
 
-type Props = ComponentBaseProps & {
+export type SvgIconProps = ComponentBaseProps & {
   icon: IconName;
   size?: IconSize | number;
   color?: IconColor | string;
@@ -40,7 +40,7 @@ export function SvgIcon({
   icon,
   size = IconSize.Medium,
   color,
-}: Props): h.JSX.Element & any {
+}: SvgIconProps): h.JSX.Element & any {
   function getIcon() {
     switch (icon) {
       case 'cancel':

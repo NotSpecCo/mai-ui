@@ -4,7 +4,7 @@ import { ComponentBaseProps } from '../../models';
 import { ifClass, joinClasses } from '../../utils/classes';
 import styles from './View.module.css';
 
-type Props = ComponentBaseProps & {
+export type ViewProps = ComponentBaseProps & {
   backgroundImageUrl?: string;
   backgroundShift?: number;
   accentColor?: string;
@@ -16,7 +16,7 @@ type Props = ComponentBaseProps & {
 export function View({
   enableBackdrop = true,
   ...props
-}: Props): h.JSX.Element & any {
+}: ViewProps): h.JSX.Element & any {
   function getAccentColor(): string {
     return props.accentColor ? props.accentColor : 'inherit';
   }

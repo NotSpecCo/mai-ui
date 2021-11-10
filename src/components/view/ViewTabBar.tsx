@@ -10,7 +10,7 @@ export type Tab = {
   label: string;
 };
 
-type Props = ComponentBaseProps & {
+export type ViewTabBarProps = ComponentBaseProps & {
   tabs: Tab[];
   selectedId: string;
   onChange?: (tabId: string) => void;
@@ -20,7 +20,7 @@ export function ViewTabBar({
   tabs,
   selectedId,
   ...props
-}: Props): h.JSX.Element & any {
+}: ViewTabBarProps): h.JSX.Element & any {
   const { appbarOpen, homeMenuOpen } = useView();
   function changeTab(change: number): void {
     const currentIndex = tabs.findIndex((a) => a.id === selectedId);

@@ -2,11 +2,11 @@ import { h } from 'preact';
 import { ComponentBaseProps } from '../../models';
 import styles from './ListSection.module.css';
 
-type Props = ComponentBaseProps & {
+export type ListSectionProps = ComponentBaseProps & {
   title?: string;
 };
 
-export function ListSection(props: Props): h.JSX.Element & any {
+export function ListSection(props: ListSectionProps): h.JSX.Element & any {
   return (
     <div className={styles.root}>
       {props.title ? <div className={styles.title}>{props.title}</div> : null}

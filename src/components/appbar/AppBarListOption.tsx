@@ -15,7 +15,7 @@ export type AppBarOption = {
   currentValue: string | number;
 };
 
-type Props = ComponentBaseProps &
+export type AppBarListOptionProps = ComponentBaseProps &
   SelectableProps & {
     label: string;
     optionId: string;
@@ -24,7 +24,9 @@ type Props = ComponentBaseProps &
     onChange?: (id: string, value: string | number) => void;
   };
 
-export function AppBarListOption(props: Props): h.JSX.Element & any {
+export function AppBarListOption(
+  props: AppBarListOptionProps
+): h.JSX.Element & any {
   function change(change: 1 | -1): void {
     const nextIndex = getIndexWrap(
       props.options,

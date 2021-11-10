@@ -3,7 +3,7 @@ import { ComponentBaseProps } from '../../models';
 import { ifClass, joinClasses } from '../../utils/classes';
 import styles from './TileContent.module.css';
 
-type Props = ComponentBaseProps & {
+export type TileContentProps = ComponentBaseProps & {
   backgroundImage?: string;
   scrim?: boolean;
   contentH?: 'left' | 'center' | 'right';
@@ -15,7 +15,7 @@ export function TileContent({
   contentH = 'right',
   contentV = 'bottom',
   ...props
-}: Props): h.JSX.Element & any {
+}: TileContentProps): h.JSX.Element & any {
   return (
     <div
       className={joinClasses(styles.root)}

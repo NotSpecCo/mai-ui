@@ -3,9 +3,9 @@ import { SelectablePriority } from '../../enums';
 import { ComponentBaseProps } from '../../models';
 import styles from './ViewContent.module.css';
 
-type Props = ComponentBaseProps & {};
+export type ViewContentProps = ComponentBaseProps & {};
 
-export function ViewContent(props: Props): h.JSX.Element & any {
+export function ViewContent(props: ViewContentProps): h.JSX.Element & any {
   return (
     <div
       className={styles.root}

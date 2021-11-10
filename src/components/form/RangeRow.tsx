@@ -6,7 +6,7 @@ import { SelectableBase } from '../SelectableBase';
 import { IconSize, SvgIcon } from '../SvgIcon';
 import styles from './RangeRow.module.css';
 
-type Props = ComponentBaseProps &
+export type RangeRowProps = ComponentBaseProps &
   SelectableProps & {
     label: string;
     valueLabel?: string;
@@ -17,7 +17,7 @@ type Props = ComponentBaseProps &
     onChange?: (value: number) => void;
   };
 
-export function RangeRow(props: Props): h.JSX.Element & any {
+export function RangeRow(props: RangeRowProps): h.JSX.Element & any {
   function change(change: number): void {
     let nextValue = Math.round((props.value + change) * 100) / 100;
     if (nextValue < props.min) {

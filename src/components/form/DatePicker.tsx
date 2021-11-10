@@ -10,14 +10,14 @@ import { SelectableBase } from '../SelectableBase';
 import { SvgIcon } from '../SvgIcon';
 import styles from './DatePicker.module.css';
 
-type Props = ComponentBaseProps &
+export type DatePickerProps = ComponentBaseProps &
   SelectableProps & {
     label: string;
     value?: string;
     onChange?: (value: string) => void;
   };
 
-export function DatePicker(props: Props): h.JSX.Element & any {
+export function DatePicker(props: DatePickerProps): h.JSX.Element & any {
   const [open, setOpen] = useState(false);
   const [columnIndex, setColumnIndex] = useState<number>();
   const [date, setDate] = useState<Date>(

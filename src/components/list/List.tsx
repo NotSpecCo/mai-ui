@@ -2,8 +2,8 @@ import { h } from 'preact';
 import { ComponentBaseProps } from '../../models';
 import styles from './List.module.css';
 
-type Props = ComponentBaseProps & {};
+export type ListProps = ComponentBaseProps & {};
 
-export function List(props: Props): any {
+export function List(props: ListProps): any {
   return <div className={styles.root}>{props.children}</div>;
 }

@@ -5,7 +5,7 @@ import { ComponentBaseProps, SelectableProps } from '../../models';
 import { ifClass, joinClasses } from '../../utils/classes';
 import styles from './Toggle.module.css';
 
-type Props = ComponentBaseProps &
+export type ToggleProps = ComponentBaseProps &
   SelectableProps & {
     disabled?: boolean;
     value: boolean;
@@ -15,7 +15,7 @@ type Props = ComponentBaseProps &
 export function Toggle({
   disabled = false,
   ...props
-}: Props): h.JSX.Element & any {
+}: ToggleProps): h.JSX.Element & any {
   const view = useView();
 
   useNavKeys(

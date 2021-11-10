@@ -4,7 +4,7 @@ import { ComponentBaseProps, SelectableProps } from '../models';
 import { joinClasses } from '../utils/classes';
 import styles from './SelectableBase.module.css';
 
-type Props = ComponentBaseProps & {
+export type SelectableBaseProps = ComponentBaseProps & {
   id?: string | number;
   priority?: SelectablePriority;
   shortcut?: string | number;
@@ -12,7 +12,9 @@ type Props = ComponentBaseProps & {
   ariaLabel?: string;
 };
 
-export function SelectableBase(props: Props): h.JSX.Element & any {
+export function SelectableBase(
+  props: SelectableBaseProps
+): h.JSX.Element & any {
   return (
     <div
       className={joinClasses(styles.root, props.className)}

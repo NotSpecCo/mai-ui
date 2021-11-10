@@ -13,7 +13,7 @@ type Option = {
   disabled?: boolean;
 };
 
-type Props = ComponentBaseProps &
+export type SelectProps = ComponentBaseProps &
   SelectableProps & {
     label: string;
     value: string;
@@ -21,7 +21,7 @@ type Props = ComponentBaseProps &
     onChange?: (optionId: any) => void;
   };
 
-export function Select(props: Props): h.JSX.Element & any {
+export function Select(props: SelectProps): h.JSX.Element & any {
   const [open, setOpen] = useState(false);
 
   const view = useView();

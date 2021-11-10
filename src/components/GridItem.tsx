@@ -5,7 +5,7 @@ import { ifClass, joinClasses } from '../utils/classes';
 import styles from './GridItem.module.css';
 import { SelectableBase } from './SelectableBase';
 
-type Props = ComponentBaseProps &
+export type GridItemProps = ComponentBaseProps &
   SelectableProps & {
     dimIfUnselected?: boolean;
     shortcutKey?: string | number;
@@ -14,7 +14,7 @@ type Props = ComponentBaseProps &
   };
 
 export const GridItem = forwardRef(
-  ({ dimIfUnselected = false, ...props }: Props, ref: any) => {
+  ({ dimIfUnselected = false, ...props }: GridItemProps, ref: any) => {
     return (
       <SelectableBase {...props.selectable}>
         <img

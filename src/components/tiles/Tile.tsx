@@ -5,7 +5,7 @@ import { ifClass, joinClasses } from '../../utils/classes';
 import { SelectableBase } from '../SelectableBase';
 import styles from './Tile.module.css';
 
-type Props = ComponentBaseProps &
+export type TileProps = ComponentBaseProps &
   SelectableProps & {
     width?: 1 | 2 | 3;
     accentColor?: string;
@@ -13,7 +13,7 @@ type Props = ComponentBaseProps &
     backContent: any /* TODO: Fix */;
   };
 
-export function Tile({ width = 1, ...props }: Props): h.JSX.Element & any {
+export function Tile({ width = 1, ...props }: TileProps): h.JSX.Element & any {
   const [animate, setAnimate] = useState(false);
   useEffect(() => {
     setTimeout(() => {

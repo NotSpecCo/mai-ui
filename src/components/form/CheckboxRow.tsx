@@ -6,7 +6,7 @@ import { ifClass, joinClasses } from '../../utils/classes';
 import { SelectableBase } from '../SelectableBase';
 import styles from './CheckboxRow.module.css';
 
-type Props = ComponentBaseProps &
+export type CheckboxRowProps = ComponentBaseProps &
   SelectableProps & {
     label: string;
     disabled?: boolean;
@@ -17,7 +17,7 @@ type Props = ComponentBaseProps &
 export function CheckboxRow({
   disabled = false,
   ...props
-}: Props): h.JSX.Element & any {
+}: CheckboxRowProps): h.JSX.Element & any {
   const view = useView();
 
   useNavKeys(

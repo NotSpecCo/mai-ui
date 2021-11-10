@@ -6,7 +6,7 @@ import { ifClass, joinClasses } from '../../utils/classes';
 import { SelectableBase } from '../SelectableBase';
 import styles from './ToggleRow.module.css';
 
-type Props = ComponentBaseProps &
+export type ToggleRowProps = ComponentBaseProps &
   SelectableProps & {
     label: string;
     disabled?: boolean;
@@ -17,7 +17,7 @@ type Props = ComponentBaseProps &
 export function ToggleRow({
   disabled = false,
   ...props
-}: Props): h.JSX.Element & any {
+}: ToggleRowProps): h.JSX.Element & any {
   const view = useView();
 
   useNavKeys(

@@ -7,7 +7,7 @@ import { SelectableBase } from '../SelectableBase';
 import { IconSize, SvgIcon } from '../SvgIcon';
 import styles from './InlineSelect.module.css';
 
-type Props = ComponentBaseProps &
+export type InlineSelectProps = ComponentBaseProps &
   SelectableProps & {
     label: string;
     options: Option[];
@@ -15,7 +15,7 @@ type Props = ComponentBaseProps &
     onChange?: (value: string | number) => void;
   };
 
-export function InlineSelect(props: Props): h.JSX.Element & any {
+export function InlineSelect(props: InlineSelectProps): h.JSX.Element & any {
   function change(change: 1 | -1): void {
     const nextIndex = getIndexWrap(
       props.options,

@@ -3,7 +3,7 @@ import { ComponentBaseProps } from '../models';
 import { joinClasses } from '../utils/classes';
 import styles from './Typography.module.css';
 
-type Props = ComponentBaseProps & {
+export type TypographyProps = ComponentBaseProps & {
   display?: 'block' | 'inline';
   type?:
     | 'caption'
@@ -32,7 +32,7 @@ export function Typography({
   padding = 'both',
   wrap = 'wrap',
   ...props
-}: Props): h.JSX.Element & any {
+}: TypographyProps): h.JSX.Element & any {
   return (
     <div
       className={joinClasses(

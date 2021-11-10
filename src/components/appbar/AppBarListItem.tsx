@@ -4,14 +4,16 @@ import { ifClass, joinClasses } from '../../utils/classes';
 import { SelectableBase } from '../SelectableBase';
 import styles from './AppBarListItem.module.css';
 
-type Props = ComponentBaseProps &
+export type AppBarListItemProps = ComponentBaseProps &
   SelectableProps & {
     icon?: string;
     text: string;
     disabled?: boolean;
   };
 
-export function AppBarListItem(props: Props): h.JSX.Element & any {
+export function AppBarListItem(
+  props: AppBarListItemProps
+): h.JSX.Element & any {
   return (
     <SelectableBase
       {...props.selectable}

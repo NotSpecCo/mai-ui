@@ -4,7 +4,7 @@ import { joinClasses } from '../../utils/classes';
 import { SelectableBase } from '../SelectableBase';
 import styles from './ListItem.module.css';
 
-type Props = ComponentBaseProps &
+export type ListItemProps = ComponentBaseProps &
   SelectableProps & {
     imageUrl?: string;
     primaryText?: string;
@@ -13,7 +13,7 @@ type Props = ComponentBaseProps &
     selected?: boolean;
   };
 
-export function ListItem(props: Props): h.JSX.Element & any {
+export function ListItem(props: ListItemProps): h.JSX.Element & any {
   return (
     <SelectableBase
       {...props.selectable}

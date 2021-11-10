@@ -13,6 +13,7 @@ import { Typography } from '../Typography';
 import styles from './AppBar.module.css';
 import { AppBarListItem } from './AppBarListItem';
 import { AppBarListOption, AppBarOption } from './AppBarListOption';
+import { AppMenu } from './AppMenu';
 
 export type AppBarItem = {
   id: string;
@@ -29,7 +30,7 @@ export type AppBarAction = {
   actionFn: () => any;
 };
 
-type Props = ComponentBaseProps & {
+export type AppBarProps = ComponentBaseProps & {
   leftText?: string;
   centerText?: string;
   rightText?: string;
@@ -38,6 +39,9 @@ type Props = ComponentBaseProps & {
   rightIcon?: IconName | null;
   actions?: AppBarAction[];
   options?: AppBarOption[];
+  // appMenu: h.JSX.Element;
+  // appMenu: AnyComponent<any, any>;
+  appMenuContent?: any;
   onOptionChange?: (id: string, value: string | number) => void;
 };
 
@@ -52,7 +56,7 @@ export function AppBar({
   leftIcon = 'grid',
   options = [],
   ...props
-}: Props): h.JSX.Element & any {
+}: AppBarProps): h.JSX.Element & any {
   const [appMenuOpen, setAppMenuOpen] = useState(false);
   const [openState, setOpenState] = useState(MenuState.Closed);
   const [actions, setActions] = useState<AppBarAction[]>(props.actions || []);
@@ -198,7 +202,8 @@ export function AppBar({
           </div>
         ) : null}
       </div>
-      {/* {appMenuOpen && <AppMenu onClose={(): void => setAppMenuOpen(false)} />} */}
+      {appMenuOpen && <AppMenu>{props.appMenuContent}</AppMenu>}
+      {/* {appMenuOpen && props.appMenu} */}
     </Fragment>
   );
 }

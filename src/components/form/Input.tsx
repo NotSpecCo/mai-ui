@@ -7,7 +7,7 @@ import { ifClass, joinClasses } from '../../utils/classes';
 import { SelectableBase } from '../SelectableBase';
 import styles from './Input.module.css';
 
-type Props = ComponentBaseProps &
+export type InputProps = ComponentBaseProps &
   SelectableProps & {
     label?: string;
     type?: 'text' | 'number';
@@ -18,7 +18,10 @@ type Props = ComponentBaseProps &
     onEnter?: (value: string) => void;
   };
 
-export function Input({ type = 'text', ...props }: Props): h.JSX.Element & any {
+export function Input({
+  type = 'text',
+  ...props
+}: InputProps): h.JSX.Element & any {
   const ref = useRef<HTMLInputElement>(null);
 
   const view = useView();

@@ -13,13 +13,17 @@ export type MenuOption = {
   label: string;
   disabled?: boolean;
 };
-type Props = ComponentBaseProps & {
+
+export type MenuProps = ComponentBaseProps & {
   options: MenuOption[];
   title?: string;
   onSelect?: (menuOptionId: any) => void;
 };
 
-export function Menu({ options = [], ...props }: Props): h.JSX.Element & any {
+export function Menu({
+  options = [],
+  ...props
+}: MenuProps): h.JSX.Element & any {
   const { selectedId } = useListNav({
     priority: SelectablePriority.Medium,
     updateRouteOnChange: false,

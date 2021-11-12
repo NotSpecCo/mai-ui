@@ -15,6 +15,7 @@ export function Button(props: ButtonProps): h.JSX.Element & any {
       className={joinClasses(styles.root, props.className)}
       data-selectable-priority={props.selectable?.priority}
       data-selectable-id={props.selectable?.id}
+      data-selected={props.selectable?.selected}
       disabled={props.disabled}
     >
       {props.text}

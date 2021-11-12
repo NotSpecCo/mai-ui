@@ -4,9 +4,10 @@
   background: none;
   border-radius: 15px;
   width: 100%;
-  border: 2px solid var(--divider-color);
+  border: 2px solid var(--primary-text-color);
+  color: var(--primary-text-color);
 }
-[data-selected].root {
+.root[data-selected] {
   background-color: var(--highlight-bg-color);
   color: var(--highlight-text-color);
 }

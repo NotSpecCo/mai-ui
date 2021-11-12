@@ -6,38 +6,51 @@
   "module": "./dist/index.es.js",
   "scripts": {
     "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "Garrett Downs",
   "license": "ISC",
   "files": [
     "dist"
   ],
+  "dependencies": {
+    "date-fns": "^2.25.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
     "@babel/preset-react": "^7.16.0",
+    "@etchteam/storybook-addon-css-variables-theme": "^1.0.2",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-typescript": "^8.3.0",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/preact": "^6.3.12",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
     "babel-loader": "^8.2.3",
+    "babel-preset-react-app": "^10.0.0",
     "core-js": "^3.19.1",
     "cross-env": "^7.0.3",
     "date-fns": "^2.25.0",
     "eslint-config-preact": "^1.2.0",
+    "postcss": "^8.3.11",
     "preact": "^10.3.1",
     "preact-router": "^3.2.1",
+    "rollup": "^2.60.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
+    "storybook-css-modules-preset": "^1.1.1",
     "typescript": "^4.4.4"
   },
   "peerDependencies": {
-    "date-fns": "^2.25.0",
     "preact": "^10.3.1",
     "preact-router": "^3.2.1"
   },
@@ -65,6 +78,12 @@
         "react-app",
         {
           "absoluteRuntime": false
+        }
+      ],
+      [
+        "@babel/typescript",
+        {
+          "jsxPragma": "h"
         }
       ]
     ]

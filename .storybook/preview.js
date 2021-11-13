@@ -9,7 +9,7 @@ const customViewports = {
     name: 'KaiOS',
     styles: {
       width: '240px',
-      height: '296px',
+      height: '320px',
     },
     type: 'mobile',
   },

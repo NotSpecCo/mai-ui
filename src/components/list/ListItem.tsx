@@ -1,3 +1,4 @@
+/** @jsx h */
 import { h } from 'preact';
 import { ComponentBaseProps, SelectableProps } from '../../models';
 import { joinClasses } from '../../utils/classes';

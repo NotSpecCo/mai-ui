@@ -1,3 +1,4 @@
+/** @jsx h */
 import { h, VNode } from 'preact';
 import { SelectablePriority } from '../enums';
 import { ComponentBaseProps, SelectableProps } from '../models';

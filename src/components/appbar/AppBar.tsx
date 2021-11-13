@@ -119,14 +119,25 @@ export function AppBar({
     },
   });
 
-  useNavKeys({
-    SoftLeft: () => setAppMenuOpen(!appMenuOpen),
-    SoftRight: () => (openState === MenuState.Open ? closeMenu() : openMenu()),
-    Escape: () => {
-      setAppMenuOpen(false);
-      closeMenu();
+  useNavKeys(
+    {
+      SoftLeft: () => setAppMenuOpen(!appMenuOpen),
+      SoftRight: () =>
+        openState === MenuState.Open ? closeMenu() : openMenu(),
+      Backspace: () => {
+        if (appMenuOpen) {
+          setAppMenuOpen(false);
+          return true;
+        }
+        return false;
+      },
+      Escape: () => {
+        setAppMenuOpen(false);
+        closeMenu();
+      },
     },
-  });
+    { stopPropagation: true, capture: true }
+  );
 
   const right =
     actions.length > 0
